@@ -12,29 +12,29 @@ hbs.registerPartials(__dirname + '/views/partials');
 //Servir contenido estatico
 app.use(express.static('Public')); //le mandamos el path
 
-app.get('/', (req, res) => {
-    res.render('home', {
-        nombre: 'Luis Alberto',
-        titulo: 'WebServer Node'
-    });
-});
+// app.get('/', (req, res) => {
+//     res.render('home', {
+//         nombre: 'Luis Alberto',
+//         titulo: 'WebServer Node'
+//     });
+// });
 
-app.get('/generic', (req, res) => {
-    res.render('generic', {
-        nombre: 'Luis Alberto',
-        titulo: 'WebServer Node'
-    });
-});
+// app.get('/generic', (req, res) => {
+//     res.render('generic', {
+//         nombre: 'Luis Alberto',
+//         titulo: 'WebServer Node'
+//     });
+// });
 
-app.get('/elements', (req, res) => {
-    res.render('elements', {
-        nombre: 'Luis Alberto',
-        titulo: 'WebServer Node'
-    });
-});
+// app.get('/elements', (req, res) => {
+//     res.render('elements', {
+//         nombre: 'Luis Alberto',
+//         titulo: 'WebServer Node'
+//     });
+// });
 
 app.get('*', (req, res) => {
-    res.render('404');
+    res.sendFile(__dirname + '/Public/index.html');
 });
 
 // app.get('/generic', (req, res) => {
